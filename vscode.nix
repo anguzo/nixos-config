@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
 
@@ -18,7 +16,7 @@
       "nix.serverSettings" = {
         "nixd" = {
           "formatting" = {
-            "command" = [ "alejandra" ];
+            "command" = ["alejandra"];
           };
         };
       };
