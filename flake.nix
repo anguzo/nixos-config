@@ -12,10 +12,15 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.xps15 = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
+        {
+          home-manager.useGlobalPkgs = true;
+          
+          # Enable home-manager.
+          home-manager.users.anguzo = import ./home.nix;
+        }
       ];
     };
   };
