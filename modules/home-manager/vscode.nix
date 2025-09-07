@@ -1,3 +1,4 @@
+# /etc/nixos/modules/home-manager/vscode.nix
 {pkgs, ...}: {
   programs.vscode = {
     enable = true;

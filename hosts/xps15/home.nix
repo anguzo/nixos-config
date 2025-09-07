@@ -1,11 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+# /etc/nixos/hosts/xps15/home.nix
+{...}: {
   imports = [
-    ./git.nix
-    ./vscode.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/vscode.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+# /etc/nixos/modules/home-manager/git.nix
+{...}: {
   programs.git = {
     enable = true;
 

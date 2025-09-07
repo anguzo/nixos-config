@@ -1,3 +1,4 @@
+# /etc/nixos/flake.nix
 {
   description = "Nixos config flake";
 
@@ -17,13 +18,12 @@
   } @ inputs: {
     nixosConfigurations.xps15 = nixpkgs.lib.nixosSystem {
       modules = [
-        ./configuration.nix
+        ./hosts/xps15/configuration.nix
         inputs.home-manager.nixosModules.default
         {
           home-manager.useGlobalPkgs = true;
-
           # Enable home-manager.
-          home-manager.users.anguzo = import ./home.nix;
+          home-manager.users.anguzo = import ./hosts/xps15/home.nix;
         }
       ];
     };
